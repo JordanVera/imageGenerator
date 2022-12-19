@@ -9,21 +9,21 @@ function App() {
   const [errorMessage, setErrorMessage] = useState('');
 
   const onSubmit = (data) => {
-    const { prompt, size } = data;
-    console.log({ prompt, size });
+    const { prompt, size, count } = data;
+    console.log({ prompt, size, count });
 
     if (prompt === '') {
       alert('Please add more text');
       return;
     }
 
-    generateImageRequest(prompt, size);
+    generateImageRequest(prompt, size, count);
   };
 
-  async function generateImageRequest(prompt, size) {
+  async function generateImageRequest(prompt, size, count) {
     try {
       setLoading(true);
-      setImageURL('');
+      setImageURL([]);
       setErrorMessage('');
 
       const response = await fetch(
@@ -36,6 +36,7 @@ function App() {
           body: JSON.stringify({
             prompt,
             size,
+            count,
           }),
         }
       );
@@ -99,6 +100,21 @@ function App() {
                 <option value="large">Large</option>
               </select>
             </div>
+
+            <div className="form-control">
+              <select {...register('count')} id="count" defaultValue="1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
             <button type="submit" className="btn">
               Generate
             </button>
@@ -108,7 +124,11 @@ function App() {
         <section className="image">
           <div className="image-container">
             <h2 className="msg">{errorMessage}</h2>
-            <img src={imageURL} alt="" id="image" />
+            {imageURL.length > 0
+              ? imageURL.map((img) => {
+                  return <img src={img.url} alt="" id="image" />;
+                })
+              : null}
           </div>
         </section>
       </main>
