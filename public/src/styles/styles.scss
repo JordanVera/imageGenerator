@@ -1,6 +1,8 @@
 $color_1: #333;
 $color_2: #fff;
 $color_3: #f9b64d;
+$blue: #77B6EA;
+$pink: #F786AA;
 $font-family_1: 'Poppins', sans-serif;
 
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap";
@@ -25,34 +27,11 @@ body {
 	font-family: $font-family_1;
 	font-size: 16px;
 	line-height: 1.5;
-	color: $color_1;
-	background: #f4f4f4;
+	background-color: #333;
 }
-.navbar {
-	background: #333;
-	color: $color_2;
-	padding: 1rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	ul {
-		list-style: none;
-		display: flex;
-		li {
-			margin-left: 1rem;
-		}
-	}
-	a {
-		color: $color_2;
-		text-decoration: none;
-		font-size: 1.2rem;
-		&:hover {
-			color: $color_3;
-		}
-	}
-}
+
 .showcase {
-	height: 450px;
+	padding: 24px;
 	width: 100%;
 	background: $color_3;
 	h1 {
@@ -68,14 +47,9 @@ body {
 		flex-direction: column;
 		height: 100%;
 		width: 100%;
-		input {
-			font-size: 20px;
+
+		.input, button {
 			width: 500px;
-			max-width: 500px;
-			padding: 1rem;
-			border: 1px solid #ccc;
-			border-radius: 5px;
-			margin-bottom: 1rem;
 		}
 	}
 }
@@ -110,6 +84,7 @@ form {
 img {
 	display: block;
 	margin: auto;
+	background-color: $color_1 !important;
 }
 .msg {
 	font-size: 1.6rem;

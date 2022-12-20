@@ -23,8 +23,6 @@ const generateImage = async (req, res) => {
       success: true,
       data: imageUrls,
     });
-
-    console.log(response.data.data);
   } catch (error) {
     if (error.response) {
       console.log(error.response.status);
