@@ -130,11 +130,13 @@ const Form = () => {
         <section className="image">
           <div className="image-container">
             <h2 className="msg">{errorMessage}</h2>
-            {imageURL.length > 0
-              ? imageURL.map((img) => {
-                  return <img src={img.url} alt="" id="image" />;
-                })
-              : null}
+            <div className="imageGrid">
+              {imageURL.length > 0
+                ? imageURL.map((img) => {
+                    return <img src={img.url} alt="" id="image" />;
+                  })
+                : null}
+            </div>
           </div>
         </section>
       </main>

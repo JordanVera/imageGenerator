@@ -8,7 +8,7 @@ const App = () => {
     palette: {
       mode: 'dark',
       primary: {
-        main: '#F786AA',
+        main: '#00BBDC',
         secondary: '#77B6EA',
       },
     },

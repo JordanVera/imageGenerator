@@ -1,6 +1,7 @@
 $color_1: #333;
 $color_2: #fff;
-$color_3: #f9b64d;
+$color_3: #c98702;
+$color_4: #636363;
 $blue: #77B6EA;
 $pink: #F786AA;
 $font-family_1: 'Poppins', sans-serif;
@@ -27,16 +28,16 @@ body {
 	font-family: $font-family_1;
 	font-size: 16px;
 	line-height: 1.5;
-	background-color: #333;
+	background-color: $color_4;
 }
 
 .showcase {
 	padding: 24px;
 	width: 100%;
-	background: $color_3;
+	margin-top: 120px;
 	h1 {
 		font-size: 2.5rem;
-		color: $color_1;
+		color: $color_2;
 		text-align: center;
 		padding: 1rem 0;
 	}
@@ -90,4 +91,44 @@ img {
 	font-size: 1.6rem;
 	text-align: center;
 	margin-top: 1rem;
+}
+
+.imageGrid { 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 20px;
+  align-items: stretch;
+
+	img {
+		border: 1px solid #ccc;
+		box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+		max-width: 100%;
+	}
+}
+
+#appBar {
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	box-shadow: none !important;
+	background: $color_1 !important;
+
+	.navLink {
+		color: $color_2;
+		text-decoration: none;
+		padding: 0 12px;
+	}
+
+	 .socialMediaLink {
+		color: $color_2;
+	}
+
+	.appBarLogo {
+		height: 60px;
+	}
+
+	.digitalClock {
+		margin-right: 24px !important;
+	}
 }
